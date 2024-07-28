@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <h1 class="display-4">Cancellations</h1>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Customer</th>
+          <th scope="col">Booking ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cancellation in cancellations %}
+        <tr>
+          <td>{{ cancellation.customer }}</td>
+          <td>{{ cancellation.booking_id }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

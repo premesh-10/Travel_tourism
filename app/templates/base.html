@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Tourism</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Travel & Tourism</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('customers') }}">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('bookings') }}">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('cancellations') }}">Cancellations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('places') }}">Tourism Places</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Welcome to Travel & Tourism</h1>
+                    <p class="lead">Here you can find details about Customers, their Bookings, Hotels, Places and more...</p>
+                    <button class="btn btn-primary btn-lg">Explore Now!</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fas fa-users fa-3x"></i>
+                            <h2>Customers</h2>
+                            <p>View customer profiles, bookings, and preferences.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-calendar fa-3x"></i>
+                            <h2>Bookings</h2>
+                            <p>Manage bookings, itineraries, and travel plans.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-hotel fa-3x"></i>
+                            <h2>Hotels</h2>
+                            <p>Browse and book hotels, resorts, and accommodations.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fas fa-map-marker fa-3x"></i>
+                            <h2>Places</h2>
+                            <p>Discover popular destinations, attractions, and activities.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-info fa-3x"></i>
+                            <h2>More...</h2>
+                            <p>And many more features to explore!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </main>
+</body>
+</html>
